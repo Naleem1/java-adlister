@@ -10,6 +10,13 @@ import java.io.PrintWriter;
 public class WelcomeServlet extends HttpServlet {
 
     @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        resp.setContentType("text/html");
+        PrintWriter out = resp.getWriter();
+        out.println("<h2>Welcome," + username + "!</h2>");
+    }
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String car = req.getParameter("car");
         PrintWriter out = resp.getWriter();
@@ -19,12 +26,5 @@ public class WelcomeServlet extends HttpServlet {
         }else {
             out.print("<h3>Tell me about your car!<h3>");
         }
-    }
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("username");
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-        out.println("<h2>Welcome," + username + "!</h2>");
     }
 }
