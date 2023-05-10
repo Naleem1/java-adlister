@@ -1,3 +1,5 @@
+package controllers;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,10 +20,12 @@ public class WelcomeServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("Inside welcome doGet method");
         String car = req.getParameter("car");
+        System.out.printf("Car: %s%n", car);
         PrintWriter out = resp.getWriter();
         resp.setContentType("text/html");
-        if( car != null) {
+        if( car != "") {
             out.println("<h3>Your " + car + "is awesome!</h3>");
         }else {
             out.print("<h3>Tell me about your car!<h3>");
