@@ -20,9 +20,9 @@ public class WelcomeServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Inside welcome doGet method");
+//        System.out.println("Inside welcome doGet method");
         String car = req.getParameter("car");
-        System.out.printf("Car: %s%n", car);
+//        System.out.printf("Car: %s%n", car);
         PrintWriter out = resp.getWriter();
         resp.setContentType("text/html");
         if( car != "") {
