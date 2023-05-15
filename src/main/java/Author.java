@@ -7,7 +7,7 @@ public class Author implements Serializable {
     private String firstName;
     private String lastName;
 
-    private List<Quotes> quotes;
+    private List<Quote> quotes;
 
     public int getId() {
         return id;

@@ -1,5 +1,5 @@
 import java.io.Serializable;
-public class Quotes implements Serializable {
+public class Quote implements Serializable {
 
     private int id;
     private String content;
@@ -29,10 +29,10 @@ public class Quotes implements Serializable {
         this.author = author;
     }
 
-    public Quotes() {
+    public Quote() {
     }
 
-    public Quotes(int id, String content, Author author) {
+    public Quote(int id, String content, Author author) {
         this.id = id;
         this.content = content;
         this.author = author;
